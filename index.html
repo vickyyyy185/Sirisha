@@ -3,208 +3,185 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>For Sirisha 💖</title>
+<title>For Sirisha</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@500;700&display=swap" rel="stylesheet">
 
 <style>
-body {
-  margin: 0;
-  font-family: 'Quicksand', sans-serif;
-  background: linear-gradient(180deg, #ffdde1, #ee9ca7);
-  color: #fff;
-  text-align: center;
-  overflow-x: hidden;
+body{
+  margin:0;
+  font-family:'Montserrat',sans-serif;
+  background:linear-gradient(to bottom,#ffe6eb,#fff);
+  overflow-x:hidden;
+  text-align:center;
+  color:#5a0f2e;
 }
 
-.page {
-  display: none;
-  min-height: 100vh;
-  padding: 35px 18px;
+.page{
+  display:none;
+  min-height:100vh;
+  padding:40px 20px;
+}
+.page.active{display:block;}
+
+h1{
+  font-family:'Great Vibes',cursive;
+  font-size:3rem;
+  color:#8b0033;
+}
+p{
+  font-size:1.4rem;
+  color:#4a1c2d;
 }
 
-.page.active { display: block; }
-
-h1 {
-  font-family: 'Great Vibes', cursive;
-  font-size: 3rem;
+.btn{
+  background:#ff5c8a;
+  color:#fff;
+  border:none;
+  padding:14px 28px;
+  font-size:1.1rem;
+  border-radius:30px;
+  margin:15px;
+  cursor:pointer;
+  box-shadow:0 6px 15px rgba(0,0,0,.2);
 }
 
-p { font-size: 1.4rem; }
+/* Clouds */
+.cloud{
+  position:absolute;
+  top:10%;
+  width:120px;
+  height:60px;
+  background:#fff;
+  border-radius:50px;
+  animation:cloudMove 30s linear infinite;
+}
+.cloud:before,.cloud:after{
+  content:'';
+  position:absolute;
+  background:#fff;
+  width:60px;height:60px;
+  border-radius:50%;
+}
+.cloud:before{top:-30px;left:15px;}
+.cloud:after{top:-20px;right:15px;}
 
-.btn {
-  background: #fff;
-  color: #ff4d6d;
-  border: none;
-  padding: 14px 28px;
-  font-size: 1.2rem;
-  border-radius: 30px;
-  margin: 15px;
-  cursor: pointer;
-  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+@keyframes cloudMove{
+  from{left:-150px;}
+  to{left:110%;}
 }
 
-.list {
-  font-size: 1.25rem;
-  line-height: 2.2rem;
+/* Birds */
+.bird{
+  position:absolute;
+  top:25%;
+  font-size:28px;
+  animation:birdFly 12s linear infinite;
+}
+@keyframes birdFly{
+  from{left:-50px;}
+  to{left:110%;}
 }
 
-/* Floating emojis */
-.float {
-  position: fixed;
-  font-size: 2rem;
-  animation: float 14s linear infinite;
+/* Rainbow */
+.rainbow{
+  width:260px;
+  height:130px;
+  border-radius:0 0 260px 260px;
+  background:linear-gradient(
+    red,orange,yellow,green,blue,indigo,violet
+  );
+  margin:30px auto;
 }
 
-@keyframes float {
-  0% { transform: translateX(-10vw) translateY(90vh); }
-  100% { transform: translateX(110vw) translateY(-10vh); }
-}
-
-/* Hearts */
-.heart {
-  position: fixed;
-  font-size: 1.5rem;
-  animation: hearts 6s linear infinite;
-}
-
-@keyframes hearts {
-  0% { transform: translateY(100vh); opacity: 1; }
-  100% { transform: translateY(-10vh); opacity: 0; }
-}
-
-/* Popup */
-.popup {
-  display: none;
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.6);
-  justify-content: center;
-  align-items: center;
-}
-
-.popup-content {
-  background: #fff;
-  color: #ff4d6d;
-  padding: 28px;
-  border-radius: 22px;
-  font-size: 1.35rem;
-  max-width: 90%;
+/* Cards */
+.card{
+  background:#fff;
+  color:#6b1437;
+  padding:15px;
+  margin:12px auto;
+  border-radius:18px;
+  max-width:320px;
+  font-size:1.2rem;
+  box-shadow:0 4px 10px rgba(0,0,0,.15);
 }
 </style>
 </head>
 
-<body onclick="startMusic()">
+<body>
 
-<!-- Background Music -->
-<audio id="bgm" loop>
-  <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_7c2d7c6c9a.mp3?filename=love-ambient-110241.mp3">
+<!-- Music -->
+<audio id="music" loop>
+  <source src="https://cdn.pixabay.com/download/audio/2022/10/14/audio_4e8b6a0fa2.mp3">
 </audio>
 
-<!-- Floating visuals -->
-<div class="float">🦋</div>
-<div class="float" style="animation-delay:2s">🐦</div>
-<div class="float" style="animation-delay:4s">☁️</div>
-<div class="float" style="animation-delay:6s">🌈</div>
-<div class="float" style="animation-delay:8s">📚</div>
-<div class="float" style="animation-delay:10s">🎲</div>
+<div class="cloud"></div>
+<div class="bird">🕊️</div>
 
-<!-- Pages -->
+<!-- PAGE 1 -->
 <div class="page active" id="p1">
-  <h1>Hey Sirisha 💕</h1>
-  <p>Love is floating everywhere 🦋🌈</p>
-  <button class="btn" onclick="nextPage(2)">Click here 💖</button>
+  <h1>Hey Sirisha</h1>
+  <div class="rainbow"></div>
+  <p>This is made with patience & love</p>
+  <button class="btn" onclick="playMusic();nextPage(2)">Play Music 🎵</button>
 </div>
 
+<!-- PAGE 2 -->
 <div class="page" id="p2">
-  <h1>I know you are missing 😘</h1>
-  <div class="list">
-    🍫 Bubbly Dairy Milk Chocolate<br>
-    🥣 Upma<br>
-    🍗 Lollipop Chicken Biryani<br>
-    🍿 Sweet Corn<br>
-    🥟 Bajjilu<br>
-    💃 Bharatnatyam Dance<br>
-    📚 Books & 🎲 Ludo
-  </div>
-  <button class="btn" onclick="nextPage(3)">Next 💞</button>
+  <h1>I know you are missing</h1>
+
+  <div class="card">Bubbly Dairy Milk Chocolate</div>
+  <div class="card">Upma</div>
+  <div class="card">Lollipop Chicken Biryani</div>
+  <div class="card">Sweet Corn</div>
+  <div class="card">Bajjilu</div>
+  <div class="card">Bharatanatyam Dance</div>
+  <div class="card">Books & Ludo</div>
+
+  <button class="btn" onclick="nextPage(3)">Next</button>
 </div>
 
+<!-- PAGE 3 -->
 <div class="page" id="p3">
-  <h1>Thinnava? 😋</h1>
-  <button class="btn" onclick="showPopup('popup1')">Yes 😍</button>
-  <button class="btn" id="noBtn">No 😜</button>
+  <h1>Thinnava?</h1>
+  <button class="btn" onclick="alert('Hammayya 😌 Kadupu nindipoyindhi naku');nextPage(4)">Yes</button>
+  <button class="btn" id="no">No</button>
 </div>
 
-<div class="popup" id="popup1">
-  <div class="popup-content">
-    Hammayya 😌<br>
-    Kadupu nindipoyindhi naku ❤️
-    <br><br>
-    <button class="btn" onclick="closePopup('popup1'); nextPage(4)">Next ➡️</button>
-  </div>
-</div>
-
+<!-- PAGE 4 -->
 <div class="page" id="p4">
-  <h1>Palaka kavala? 🍿</h1>
-  <button class="btn" onclick="showPopup('popup2')">Buy 🛒</button>
+  <h1>Palaka kavala?</h1>
+  <button class="btn" onclick="alert('Warangal dha konistha ❤️');nextPage(5)">Buy</button>
 </div>
 
-<div class="popup" id="popup2">
-  <div class="popup-content">
-    Warangal dha konistha 😎❤️
-    <br><br>
-    <button class="btn" onclick="closePopup('popup2'); nextPage(5)">Next 💕</button>
-  </div>
-</div>
-
+<!-- PAGE 5 -->
 <div class="page" id="p5">
-  <h1>Wish you good luck 🍀</h1>
-  <p>For your exam 📚💖</p>
-  <button class="btn" onclick="nextPage(6)">Last 💘</button>
+  <h1>Wish you good luck</h1>
+  <p>For your exam 🌸</p>
+  <button class="btn" onclick="nextPage(6)">Last</button>
 </div>
 
+<!-- PAGE 6 -->
 <div class="page" id="p6">
-  <h1>Thank you love ❤️</h1>
-  <p>💖😘🦋🌈📚🎲</p>
+  <h1>Thank you love</h1>
 </div>
 
 <script>
 function nextPage(n){
   document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
   document.getElementById('p'+n).classList.add('active');
-  createHearts();
 }
 
-function showPopup(id){ document.getElementById(id).style.display='flex'; }
-function closePopup(id){ document.getElementById(id).style.display='none'; }
+function playMusic(){
+  document.getElementById('music').play();
+}
 
-const noBtn=document.getElementById("noBtn");
-noBtn.addEventListener("mouseover",()=>{
-  noBtn.style.position="absolute";
-  noBtn.style.left=Math.random()*70+"%";
-  noBtn.style.top=Math.random()*70+"%";
+const no=document.getElementById("no");
+no.addEventListener("mouseover",()=>{
+  no.style.position="absolute";
+  no.style.left=Math.random()*70+"%";
+  no.style.top=Math.random()*70+"%";
 });
-
-function createHearts(){
-  for(let i=0;i<6;i++){
-    const h=document.createElement("div");
-    h.className="heart";
-    h.innerText="💖";
-    h.style.left=Math.random()*100+"vw";
-    h.style.animationDuration=(3+Math.random()*3)+"s";
-    document.body.appendChild(h);
-    setTimeout(()=>h.remove(),6000);
-  }
-}
-
-let played=false;
-function startMusic(){
-  if(!played){
-    document.getElementById("bgm").play();
-    played=true;
-  }
-}
 </script>
 
 </body>
