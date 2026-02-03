@@ -1,1 +1,152 @@
-data:text/html;charset=utf-8,%3C!DOCTYPE%20html%3E%3Chtml%20lang%3D%22en%22%3E%3Chead%3E%3Cmeta%20charset%3D%22UTF-8%22%3E%3Ctitle%3EFor%20Sirisha%20%F0%9F%92%96%3C%2Ftitle%3E%3Cstyle%3Ebody%7Bmargin%3A0%3Bfont-family%3AComic%20Sans%20MS%2Ccursive%3Bbackground%3Alinear-gradient(135deg%2C%23ff9a9e%2C%23fad0c4)%3Btext-align%3Acenter%3Boverflow-x%3Ahidden%7D.page%7Bdisplay%3Anone%3Bpadding%3A40px%7D.active%7Bdisplay%3Ablock%7Dh1%2Ch2%7Bcolor%3A%23fff%7Dbutton%7Bpadding%3A12px%2025px%3Bfont-size%3A18px%3Bborder%3Anone%3Bborder-radius%3A30px%3Bbackground%3A%23ff4d6d%3Bcolor%3Awhite%3Bcursor%3Apointer%3Bmargin%3A15px%7D.items%7Bdisplay%3Aflex%3Bflex-wrap%3Awrap%3Bjustify-content%3Acenter%3Bgap%3A20px%7D.item%7Bbackground%3Awhite%3Bpadding%3A10px%3Bborder-radius%3A15px%3Bwidth%3A150px%7D.item%20img%7Bwidth%3A100%25%3Bborder-radius%3A10px%7D.butterfly%7Bposition%3Afixed%3Btop%3A-50px%3Bfont-size%3A30px%3Banimation%3Afly%208s%20linear%20infinite%7D%40keyframes%20fly%7Bfrom%7Btransform%3AtranslateY(0)%7Dto%7Btransform%3AtranslateY(120vh)%7D%7D%23noBtn%7Bposition%3Aabsolute%7D%3C%2Fstyle%3E%3C%2Fhead%3E%3Cbody%3E%3Cdiv%20class%3D%22butterfly%22%20style%3D%22left%3A10%25%22%3E%F0%9F%A6%8B%3C%2Fdiv%3E%3Cdiv%20class%3D%22butterfly%22%20style%3D%22left%3A40%25%22%3E%F0%9F%A6%8B%3C%2Fdiv%3E%3Cdiv%20class%3D%22butterfly%22%20style%3D%22left%3A70%25%22%3E%F0%9F%A6%8B%3C%2Fdiv%3E%3Cdiv%20class%3D%22page%20active%22%20id%3D%22page1%22%3E%3Ch1%3E%F0%9F%92%96%20Hey%20Sirisha%20%F0%9F%92%96%3C%2Fh1%3E%3Ch2%3ELots%20of%20love%20just%20for%20you%20%F0%9F%A6%8B%F0%9F%A6%8B%F0%9F%A6%8B%3C%2Fh2%3E%3Cbutton%20onclick%3D%22nextPage(2)%22%3EClick%20Here%20%F0%9F%92%95%3C%2Fbutton%3E%3C%2Fdiv%3E%3Cscript%3Efunction%20nextPage(n)%7Bdocument.querySelectorAll('.page').forEach(p%3D%3Ep.classList.remove('active'))%3Bdocument.getElementById('page'%2Bn).classList.add('active')%7D%3C%2Fscript%3E%3C%2Fbody%3E%3C%2Fhtml%3E
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>For Sirisha 💖</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Comic Sans MS', cursive;
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+      text-align: center;
+      overflow-x: hidden;
+    }
+
+    .page {
+      display: none;
+      padding: 40px;
+    }
+
+    .active {
+      display: block;
+    }
+
+    h1, h2 {
+      color: #fff;
+    }
+
+    button {
+      padding: 12px 25px;
+      font-size: 18px;
+      border: none;
+      border-radius: 30px;
+      background: #ff4d6d;
+      color: white;
+      cursor: pointer;
+      margin: 15px;
+    }
+
+    button:hover {
+      background: #ff1e4d;
+    }
+
+    .items {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .item {
+      background: white;
+      padding: 10px;
+      border-radius: 15px;
+      width: 150px;
+    }
+
+    .item img {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    .butterfly {
+      position: fixed;
+      top: -50px;
+      font-size: 30px;
+      animation: fly 8s linear infinite;
+    }
+
+    @keyframes fly {
+      from { transform: translateY(0); }
+      to { transform: translateY(120vh); }
+    }
+
+    #noBtn {
+      position: absolute;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Butterflies -->
+  <div class="butterfly" style="left:10%">🦋</div>
+  <div class="butterfly" style="left:40%">🦋</div>
+  <div class="butterfly" style="left:70%">🦋</div>
+
+  <!-- Page 1 -->
+  <div class="page active" id="page1">
+    <h1>💖 Hey Sirisha 💖</h1>
+    <h2>Lots of love just for you 🦋🦋🦋</h2>
+    <button onclick="nextPage(2)">Click Here 💕</button>
+  </div>
+
+  <!-- Page 2 -->
+  <div class="page" id="page2">
+    <h1>I know you are missing 😘</h1>
+    <div class="items">
+      <div class="item"><img src="https://via.placeholder.com/150"><p>Bubbly 😍</p></div>
+      <div class="item"><img src="https://via.placeholder.com/150"><p>Dairy Milk 🍫</p></div>
+      <div class="item"><img src="https://via.placeholder.com/150"><p>Upma 🍲</p></div>
+      <div class="item"><img src="https://via.placeholder.com/150"><p>Lollipop 🍭</p></div>
+      <div class="item"><img src="https://via.placeholder.com/150"><p>Chicken Biryani 🍗</p></div>
+      <div class="item"><img src="https://via.placeholder.com/150"><p>Bharatanatyam 💃</p></div>
+    </div>
+    <button onclick="nextPage(3)">Next 💖</button>
+  </div>
+
+  <!-- Page 3 -->
+  <div class="page" id="page3">
+    <h1>Thinnava? 😋</h1>
+    <button onclick="yesClicked()">Yes 😍</button>
+    <button id="noBtn" onmouseover="moveNo()">No 😜</button>
+  </div>
+
+  <!-- Page 4 -->
+  <div class="page" id="page4">
+    <h1>Palaka kavala? 🥬💚</h1>
+    <button onclick="buyPalaka()">Buy 🛒</button>
+  </div>
+
+  <!-- Page 5 -->
+  <div class="page" id="page5">
+    <h1>✨ Wish you good luck for your exam ✨</h1>
+    <h2>💖💖💖💖💖💖💖💖💖</h2>
+    <h1>Thank you, love 💕💕💕</h1>
+  </div>
+
+  <script>
+    function nextPage(n) {
+      document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+      document.getElementById('page' + n).classList.add('active');
+    }
+
+    function moveNo() {
+      const btn = document.getElementById('noBtn');
+      btn.style.left = Math.random() * 80 + '%';
+      btn.style.top = Math.random() * 80 + '%';
+    }
+
+    function yesClicked() {
+      alert("Hammayya kadupu nindipoyindhi naku 😌❤️");
+      nextPage(4);
+    }
+
+    function buyPalaka() {
+      alert("Warangal dha konistha 🥬💚😄");
+      nextPage(5);
+    }
+  </script>
+
+</body>
+</html>
