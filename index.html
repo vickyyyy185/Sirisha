@@ -3,25 +3,25 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>For Sirisha</title>
+<title>For Sirisha ❤️</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@500;700&display=swap" rel="stylesheet">
 
 <style>
 body{
   margin:0;
-  font-family:'Montserrat',sans-serif;
-  background:linear-gradient(to bottom,#ffe6eb,#fff);
-  overflow-x:hidden;
+  font-family:'Poppins',sans-serif;
+  background:linear-gradient(180deg,#ffd6e0,#fff1f5);
   text-align:center;
-  color:#5a0f2e;
+  overflow-x:hidden;
 }
 
 .page{
   display:none;
   min-height:100vh;
-  padding:40px 20px;
+  padding:40px 18px;
 }
+
 .page.active{display:block;}
 
 h1{
@@ -29,16 +29,17 @@ h1{
   font-size:3rem;
   color:#8b0033;
 }
+
 p{
-  font-size:1.4rem;
+  font-size:1.3rem;
   color:#4a1c2d;
 }
 
 .btn{
-  background:#ff5c8a;
+  background:#ff4d6d;
   color:#fff;
   border:none;
-  padding:14px 28px;
+  padding:14px 30px;
   font-size:1.1rem;
   border-radius:30px;
   margin:15px;
@@ -46,131 +47,116 @@ p{
   box-shadow:0 6px 15px rgba(0,0,0,.2);
 }
 
-/* Clouds */
-.cloud{
-  position:absolute;
-  top:10%;
-  width:120px;
-  height:60px;
+/* floating visuals */
+.float{
+  position:fixed;
+  font-size:1.8rem;
+  animation:float 14s linear infinite;
+  opacity:.8;
+}
+
+@keyframes float{
+  0%{transform:translateX(-10vw) translateY(90vh);}
+  100%{transform:translateX(110vw) translateY(-10vh);}
+}
+
+/* popup */
+.popup{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.6);
+  justify-content:center;
+  align-items:center;
+}
+
+.popup-box{
   background:#fff;
-  border-radius:50px;
-  animation:cloudMove 30s linear infinite;
-}
-.cloud:before,.cloud:after{
-  content:'';
-  position:absolute;
-  background:#fff;
-  width:60px;height:60px;
-  border-radius:50%;
-}
-.cloud:before{top:-30px;left:15px;}
-.cloud:after{top:-20px;right:15px;}
-
-@keyframes cloudMove{
-  from{left:-150px;}
-  to{left:110%;}
-}
-
-/* Birds */
-.bird{
-  position:absolute;
-  top:25%;
-  font-size:28px;
-  animation:birdFly 12s linear infinite;
-}
-@keyframes birdFly{
-  from{left:-50px;}
-  to{left:110%;}
-}
-
-/* Rainbow */
-.rainbow{
-  width:260px;
-  height:130px;
-  border-radius:0 0 260px 260px;
-  background:linear-gradient(
-    red,orange,yellow,green,blue,indigo,violet
-  );
-  margin:30px auto;
-}
-
-/* Cards */
-.card{
-  background:#fff;
-  color:#6b1437;
-  padding:15px;
-  margin:12px auto;
-  border-radius:18px;
-  max-width:320px;
-  font-size:1.2rem;
-  box-shadow:0 4px 10px rgba(0,0,0,.15);
+  color:#8b0033;
+  padding:25px;
+  border-radius:20px;
+  font-size:1.3rem;
+  max-width:90%;
 }
 </style>
 </head>
 
 <body>
 
-<!-- Music -->
 <audio id="music" loop>
-  <source src="https://cdn.pixabay.com/download/audio/2022/10/14/audio_4e8b6a0fa2.mp3">
+  <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_7c2d7c6c9a.mp3">
 </audio>
 
-<div class="cloud"></div>
-<div class="bird">🕊️</div>
+<!-- floating elements -->
+<div class="float">🦋</div>
+<div class="float" style="animation-delay:3s">🐦</div>
+<div class="float" style="animation-delay:6s">☁️</div>
+<div class="float" style="animation-delay:9s">🌈</div>
 
-<!-- PAGE 1 -->
+<!-- page 1 -->
 <div class="page active" id="p1">
-  <h1>Hey Sirisha</h1>
-  <div class="rainbow"></div>
-  <p>This is made with patience & love</p>
-  <button class="btn" onclick="playMusic();nextPage(2)">Play Music 🎵</button>
+  <h1>Hey Sirisha ❤️</h1>
+  <p>This is just for you</p>
+  <button class="btn" onclick="playMusic();next(2)">Play Music 🎵</button>
 </div>
 
-<!-- PAGE 2 -->
+<!-- page 2 -->
 <div class="page" id="p2">
-  <h1>I know you are missing</h1>
-
-  <div class="card">Bubbly Dairy Milk Chocolate</div>
-  <div class="card">Upma</div>
-  <div class="card">Lollipop Chicken Biryani</div>
-  <div class="card">Sweet Corn</div>
-  <div class="card">Bajjilu</div>
-  <div class="card">Bharatanatyam Dance</div>
-  <div class="card">Books & Ludo</div>
-
-  <button class="btn" onclick="nextPage(3)">Next</button>
+  <h1>I know you are missing 😘</h1>
+  <p>
+    🍫 Bubbly Dairy Milk Chocolate<br>
+    🥣 Upma<br>
+    🍗 Lollipop Chicken Biryani<br>
+    🍿 Sweet Corn<br>
+    🥟 Bajjilu<br>
+    💃 Bharatnatyam Dance<br>
+    📚 Books & 🎲 Ludo
+  </p>
+  <button class="btn" onclick="next(3)">Next</button>
 </div>
 
-<!-- PAGE 3 -->
+<!-- page 3 -->
 <div class="page" id="p3">
-  <h1>Thinnava?</h1>
-  <button class="btn" onclick="alert('Hammayya 😌 Kadupu nindipoyindhi naku');nextPage(4)">Yes</button>
+  <h1>Thinnava? 😋</h1>
+  <button class="btn" onclick="show('pop1')">Yes</button>
   <button class="btn" id="no">No</button>
 </div>
 
-<!-- PAGE 4 -->
+<div class="popup" id="pop1">
+  <div class="popup-box">
+    Hammayya 😌<br>
+    Kadupu nindipoyindhi naku ❤️<br><br>
+    <button class="btn" onclick="hide('pop1');next(4)">Next</button>
+  </div>
+</div>
+
+<!-- page 4 -->
 <div class="page" id="p4">
-  <h1>Palaka kavala?</h1>
-  <button class="btn" onclick="alert('Warangal dha konistha ❤️');nextPage(5)">Buy</button>
+  <h1>Palaka kavala? 🍿</h1>
+  <button class="btn" onclick="alert('Warangal dha konistha ❤️');next(5)">Buy</button>
 </div>
 
-<!-- PAGE 5 -->
+<!-- page 5 -->
 <div class="page" id="p5">
-  <h1>Wish you good luck</h1>
-  <p>For your exam 🌸</p>
-  <button class="btn" onclick="nextPage(6)">Last</button>
+  <h1>Wish you good luck 🍀</h1>
+  <p>For your exam</p>
+  <button class="btn" onclick="next(6)">Last</button>
 </div>
 
-<!-- PAGE 6 -->
+<!-- page 6 -->
 <div class="page" id="p6">
-  <h1>Thank you love</h1>
+  <h1>Thank you love ❤️❤️❤️</h1>
+  <p>💖💖💖💖💖</p>
 </div>
 
 <script>
-function nextPage(n){
+function next(n){
   document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
   document.getElementById('p'+n).classList.add('active');
 }
+
+function show(id){document.getElementById(id).style.display='flex';}
+function hide(id){document.getElementById(id).style.display='none';}
 
 function playMusic(){
   document.getElementById('music').play();
