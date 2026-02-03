@@ -14,12 +14,35 @@ body{
   background:linear-gradient(180deg,#ffd6e0,#fff1f5);
   text-align:center;
   overflow-x:hidden;
+  position:relative;
 }
+
+/* BACKGROUND LOVE STICKERS */
+.bg{
+  position:fixed;
+  inset:0;
+  z-index:0;
+  pointer-events:none;
+}
+
+.bg span{
+  position:absolute;
+  font-size:5rem;
+  opacity:0.15;
+}
+
+.bg .h1{top:10%;left:5%;}
+.bg .h2{top:20%;right:8%;}
+.bg .h3{bottom:20%;left:10%;}
+.bg .h4{bottom:10%;right:12%;}
+.bg .h5{top:45%;left:35%;}
 
 .page{
   display:none;
   min-height:100vh;
   padding:40px 18px;
+  position:relative;
+  z-index:1;
 }
 
 .page.active{display:block;}
@@ -47,20 +70,7 @@ p{
   box-shadow:0 6px 15px rgba(0,0,0,.2);
 }
 
-/* floating visuals */
-.float{
-  position:fixed;
-  font-size:1.8rem;
-  animation:float 14s linear infinite;
-  opacity:.8;
-}
-
-@keyframes float{
-  0%{transform:translateX(-10vw) translateY(90vh);}
-  100%{transform:translateX(110vw) translateY(-10vh);}
-}
-
-/* popup */
+/* POPUP */
 .popup{
   display:none;
   position:fixed;
@@ -68,6 +78,7 @@ p{
   background:rgba(0,0,0,.6);
   justify-content:center;
   align-items:center;
+  z-index:5;
 }
 
 .popup-box{
@@ -83,24 +94,28 @@ p{
 
 <body>
 
+<!-- BACKGROUND -->
+<div class="bg">
+  <span class="h1">💖</span>
+  <span class="h2">🦋</span>
+  <span class="h3">💕</span>
+  <span class="h4">❤️</span>
+  <span class="h5">💘</span>
+</div>
+
+<!-- MUSIC -->
 <audio id="music" loop>
   <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_7c2d7c6c9a.mp3">
 </audio>
 
-<!-- floating elements -->
-<div class="float">🦋</div>
-<div class="float" style="animation-delay:3s">🐦</div>
-<div class="float" style="animation-delay:6s">☁️</div>
-<div class="float" style="animation-delay:9s">🌈</div>
-
-<!-- page 1 -->
+<!-- PAGE 1 -->
 <div class="page active" id="p1">
   <h1>Hey Sirisha ❤️</h1>
   <p>This is just for you</p>
   <button class="btn" onclick="playMusic();next(2)">Play Music 🎵</button>
 </div>
 
-<!-- page 2 -->
+<!-- PAGE 2 -->
 <div class="page" id="p2">
   <h1>I know you are missing 😘</h1>
   <p>
@@ -109,13 +124,12 @@ p{
     🍗 Lollipop Chicken Biryani<br>
     🍿 Sweet Corn<br>
     🥟 Bajjilu<br>
-    💃 Bharatnatyam Dance<br>
-    📚 Books & 🎲 Ludo
+    💃 Bharatnatyam Dance
   </p>
   <button class="btn" onclick="next(3)">Next</button>
 </div>
 
-<!-- page 3 -->
+<!-- PAGE 3 -->
 <div class="page" id="p3">
   <h1>Thinnava? 😋</h1>
   <button class="btn" onclick="show('pop1')">Yes</button>
@@ -130,20 +144,27 @@ p{
   </div>
 </div>
 
-<!-- page 4 -->
+<!-- PAGE 4 -->
 <div class="page" id="p4">
-  <h1>Palaka kavala? 🍿</h1>
-  <button class="btn" onclick="alert('Warangal dha konistha ❤️');next(5)">Buy</button>
+  <h1>Palaka kavala? 😮‍💨</h1>
+  <button class="btn" onclick="show('pop2')">Buy</button>
 </div>
 
-<!-- page 5 -->
+<div class="popup" id="pop2">
+  <div class="popup-box">
+    Warangal dha konistha ❤️<br><br>
+    <button class="btn" onclick="hide('pop2');next(5)">Next</button>
+  </div>
+</div>
+
+<!-- PAGE 5 -->
 <div class="page" id="p5">
   <h1>Wish you good luck 🍀</h1>
   <p>For your exam</p>
   <button class="btn" onclick="next(6)">Last</button>
 </div>
 
-<!-- page 6 -->
+<!-- PAGE 6 -->
 <div class="page" id="p6">
   <h1>Thank you love ❤️❤️❤️</h1>
   <p>💖💖💖💖💖</p>
@@ -154,13 +175,9 @@ function next(n){
   document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
   document.getElementById('p'+n).classList.add('active');
 }
-
 function show(id){document.getElementById(id).style.display='flex';}
 function hide(id){document.getElementById(id).style.display='none';}
-
-function playMusic(){
-  document.getElementById('music').play();
-}
+function playMusic(){document.getElementById('music').play();}
 
 const no=document.getElementById("no");
 no.addEventListener("mouseover",()=>{
