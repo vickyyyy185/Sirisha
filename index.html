@@ -5,14 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>For Sirisha 💖</title>
 
-<!-- Google Font -->
-<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
 
 <style>
 body {
   margin: 0;
-  font-family: 'Poppins', sans-serif;
-  background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+  font-family: 'Quicksand', sans-serif;
+  background: linear-gradient(180deg, #ffdde1, #ee9ca7);
   color: #fff;
   text-align: center;
   overflow-x: hidden;
@@ -21,54 +20,57 @@ body {
 .page {
   display: none;
   min-height: 100vh;
-  padding: 40px 20px;
+  padding: 35px 18px;
 }
 
-.page.active {
-  display: block;
-}
+.page.active { display: block; }
 
 h1 {
-  font-family: 'Pacifico', cursive;
-  font-size: 2.6rem;
+  font-family: 'Great Vibes', cursive;
+  font-size: 3rem;
 }
 
-p {
-  font-size: 1.3rem;
-  margin: 20px 0;
-}
+p { font-size: 1.4rem; }
 
 .btn {
   background: #fff;
   color: #ff4d6d;
   border: none;
-  padding: 15px 30px;
+  padding: 14px 28px;
   font-size: 1.2rem;
   border-radius: 30px;
   margin: 15px;
   cursor: pointer;
-  transition: transform 0.2s;
-}
-
-.btn:hover {
-  transform: scale(1.05);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
 }
 
 .list {
-  font-size: 1.2rem;
-  line-height: 2rem;
+  font-size: 1.25rem;
+  line-height: 2.2rem;
 }
 
-/* Butterflies */
-.butterfly {
+/* Floating emojis */
+.float {
   position: fixed;
   font-size: 2rem;
-  animation: fly 10s linear infinite;
+  animation: float 14s linear infinite;
 }
 
-@keyframes fly {
-  0% { transform: translateX(-10vw) translateY(80vh); }
+@keyframes float {
+  0% { transform: translateX(-10vw) translateY(90vh); }
   100% { transform: translateX(110vw) translateY(-10vh); }
+}
+
+/* Hearts */
+.heart {
+  position: fixed;
+  font-size: 1.5rem;
+  animation: hearts 6s linear infinite;
+}
+
+@keyframes hearts {
+  0% { transform: translateY(100vh); opacity: 1; }
+  100% { transform: translateY(-10vh); opacity: 0; }
 }
 
 /* Popup */
@@ -84,64 +86,70 @@ p {
 .popup-content {
   background: #fff;
   color: #ff4d6d;
-  padding: 30px;
-  border-radius: 20px;
-  font-size: 1.3rem;
+  padding: 28px;
+  border-radius: 22px;
+  font-size: 1.35rem;
   max-width: 90%;
 }
 </style>
 </head>
 
-<body>
+<body onclick="startMusic()">
 
-<!-- Butterflies -->
-<div class="butterfly">🦋</div>
-<div class="butterfly" style="animation-delay:3s">🦋</div>
-<div class="butterfly" style="animation-delay:6s">🦋</div>
+<!-- Background Music -->
+<audio id="bgm" loop>
+  <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_7c2d7c6c9a.mp3?filename=love-ambient-110241.mp3">
+</audio>
 
-<!-- Page 1 -->
+<!-- Floating visuals -->
+<div class="float">🦋</div>
+<div class="float" style="animation-delay:2s">🐦</div>
+<div class="float" style="animation-delay:4s">☁️</div>
+<div class="float" style="animation-delay:6s">🌈</div>
+<div class="float" style="animation-delay:8s">📚</div>
+<div class="float" style="animation-delay:10s">🎲</div>
+
+<!-- Pages -->
 <div class="page active" id="p1">
   <h1>Hey Sirisha 💕</h1>
-  <p>Love is in the air 💖🦋</p>
-  <button class="btn" onclick="nextPage(2)">Click here 👉</button>
+  <p>Love is floating everywhere 🦋🌈</p>
+  <button class="btn" onclick="nextPage(2)">Click here 💖</button>
 </div>
 
-<!-- Page 2 -->
 <div class="page" id="p2">
   <h1>I know you are missing 😘</h1>
   <div class="list">
     🍫 Bubbly Dairy Milk Chocolate<br>
     🥣 Upma<br>
     🍗 Lollipop Chicken Biryani<br>
-    💃 Bharatnatyam Dance
+    🍿 Sweet Corn<br>
+    🥟 Bajjilu<br>
+    💃 Bharatnatyam Dance<br>
+    📚 Books & 🎲 Ludo
   </div>
-  <button class="btn" onclick="nextPage(3)">Next 💖</button>
+  <button class="btn" onclick="nextPage(3)">Next 💞</button>
 </div>
 
-<!-- Page 3 -->
 <div class="page" id="p3">
   <h1>Thinnava? 😋</h1>
   <button class="btn" onclick="showPopup('popup1')">Yes 😍</button>
   <button class="btn" id="noBtn">No 😜</button>
 </div>
 
-<!-- Popup 1 -->
 <div class="popup" id="popup1">
   <div class="popup-content">
     Hammayya 😌<br>
-    Kadupu nindipoyindhi naku 💕
+    Kadupu nindipoyindhi naku ❤️
     <br><br>
     <button class="btn" onclick="closePopup('popup1'); nextPage(4)">Next ➡️</button>
   </div>
 </div>
 
-<!-- Page 4 -->
 <div class="page" id="p4">
   <h1>Palaka kavala? 🍿</h1>
   <button class="btn" onclick="showPopup('popup2')">Buy 🛒</button>
 </div>
 
-<!-- Popup 2 -->
 <div class="popup" id="popup2">
   <div class="popup-content">
     Warangal dha konistha 😎❤️
@@ -150,43 +158,53 @@ p {
   </div>
 </div>
 
-<!-- Page 5 -->
 <div class="page" id="p5">
-  <h1>Wish you good luck 🍀✨</h1>
+  <h1>Wish you good luck 🍀</h1>
   <p>For your exam 📚💖</p>
   <button class="btn" onclick="nextPage(6)">Last 💘</button>
 </div>
 
-<!-- Page 6 -->
 <div class="page" id="p6">
-  <h1>Thank you love ❤️❤️❤️</h1>
-  <p>💖💖💖💖💖<br>
-     😘😘😘😘😘<br>
-     🦋🦋🦋🦋🦋
-  </p>
+  <h1>Thank you love ❤️</h1>
+  <p>💖😘🦋🌈📚🎲</p>
 </div>
 
 <script>
-function nextPage(n) {
-  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-  document.getElementById('p' + n).classList.add('active');
+function nextPage(n){
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  document.getElementById('p'+n).classList.add('active');
+  createHearts();
 }
 
-function showPopup(id) {
-  document.getElementById(id).style.display = 'flex';
-}
+function showPopup(id){ document.getElementById(id).style.display='flex'; }
+function closePopup(id){ document.getElementById(id).style.display='none'; }
 
-function closePopup(id) {
-  document.getElementById(id).style.display = 'none';
-}
-
-// NO button movement 😏
-const noBtn = document.getElementById("noBtn");
-noBtn.addEventListener("mouseover", () => {
-  noBtn.style.position = "absolute";
-  noBtn.style.left = Math.random() * 70 + "%";
-  noBtn.style.top = Math.random() * 70 + "%";
+const noBtn=document.getElementById("noBtn");
+noBtn.addEventListener("mouseover",()=>{
+  noBtn.style.position="absolute";
+  noBtn.style.left=Math.random()*70+"%";
+  noBtn.style.top=Math.random()*70+"%";
 });
+
+function createHearts(){
+  for(let i=0;i<6;i++){
+    const h=document.createElement("div");
+    h.className="heart";
+    h.innerText="💖";
+    h.style.left=Math.random()*100+"vw";
+    h.style.animationDuration=(3+Math.random()*3)+"s";
+    document.body.appendChild(h);
+    setTimeout(()=>h.remove(),6000);
+  }
+}
+
+let played=false;
+function startMusic(){
+  if(!played){
+    document.getElementById("bgm").play();
+    played=true;
+  }
+}
 </script>
 
 </body>
